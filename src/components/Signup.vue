@@ -1,13 +1,15 @@
 <template>
-  <div id="app">
-    <!-- <h1>Login Page</h1>
-    <div class="row">
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-        <div class="container">
-      <form>
+  <div>
+    <div class="container">
+    <h4>Signup</h4>
+    <form>
+      <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputName" v-model="loginForm.username" aria-describedby="namelHelp">
+    
+  </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1"  class="form-label">Email address</label>
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" v-model="loginForm.useremail" id="exampleInputEmail1" aria-describedby="emailHelp">
     
   </div>
@@ -19,14 +21,10 @@
     
     
   </div>
-  <button v-on:click="loginData" class="btn btn-primary">Submit</button>
+  <button type="submit" v-on:click="signupData" class="btn btn-primary">Submit</button>
 </form>
     </div>
-      </div>
-      <div class="col-sm-4"></div>
-    </div> -->
-    
-    <router-view></router-view>
+<router-view></router-view>
   </div>
 </template>
 
@@ -34,11 +32,11 @@
 
 
 export default {
-  name: 'App',
+   name: 'Signup',
   methods:{
-    loginData()
+    signupData()
     {
-      console.log("loginData",this.loginForm.useremail,this.loginForm.userpassword)
+      console.log("signupData",this.loginForm.username,this.loginForm.useremail,this.loginForm.userpassword)
     },
     
   },
@@ -49,11 +47,9 @@ export default {
         userpassword:null,
       }}
     }
-  }
+}
 </script>
 
-<style lang="scss">
-@import "~@/assets/scss/vendors/bootstrap-vue/index";
-
+<style>
 
 </style>
